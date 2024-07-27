@@ -1,0 +1,22 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct Person {
+    char name[50];
+    int age;
+};
+int main() {
+    struct Person *ptr;
+    ptr = (struct Person *)malloc(sizeof(struct Person));
+    if (ptr == NULL) {
+        printf("Memory allocation failed\n");
+        return 1;
+    }
+    strcpy(ptr->name, "harsha");
+    ptr->age = 18;
+    printf("Name: %s\n", ptr->name);
+    printf("Age: %d\n", ptr->age);
+    free(ptr);
+    return 0;
+}
